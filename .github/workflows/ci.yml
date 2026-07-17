@@ -1,0 +1,14 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check-artifact:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run artifact check
+        shell: cmd
+        run: scripts\check_artifact.cmd
